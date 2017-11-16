@@ -1,0 +1,39 @@
+<div ng-if="data == null"><span class="error">Awaiting Data...</span></div>
+
+
+<a class="back-link" href="{{ backLink }}"><i class="icon-icon_arrow_left"></i><span>Back to Meeting List</span></a>
+
+<div ng-if="data != null">
+    <h3 class="meeting-heading"><span class="course">{{ data.NAME }}</span><span class="going">Going: <span class="detail">{{ data.GOING}}</span></span></h3>
+
+    <table class="meeting-table" ng-repeat="race in data.RACES" data-rank="{{$index}}">
+        <a name="{{ race.TIME }}"></a>
+        <caption>
+            <h3 class="race-heading"><span class="time">{{ race.TIME }} /</span> {{ race.NAME }}</h3>
+            <p class="race-details">Distance: <span class="detail">{{ race.DIST }}</span> | Prize Money: <span class="detail">{{ race.VALUE }}</span> | Declared<span class="detail">{{ race.NORUN }} </span></p>
+            <span class="status" ng-if="race.RUNNERS.0.NAME==null">Hold your horses... We are currently awaiting these results.</span>
+        </caption>
+        <thead ng-if="race.RUNNERS.0.NAME!=null">
+        <tr>
+            <th ng-if="race.RUNNERS.0.POSITION">Pos.</th>
+            <th>Name</th>
+            <th>Trainer</th>
+            <th>Jockey</th>
+            <th class="hide-for-mobile">Weight</th>
+            <th ng-if="race.RUNNERS.0.POSITION" class="hide-for-mobile">SP</th>
+            <th ng-if="race.RUNNERS.0.POSITION" class="hide-for-mobile">Tote Wins</th>
+            <th ng-if="race.RUNNERS.0.POSITION" class="hide-for-mobile">Tote Place</th>
+        </tr>
+        </thead>
+        <tr ng-repeat="horse in race.RUNNERS" ng-if="horse.NAME">
+            <td ng-if="race.RUNNERS.0.POSITION" class="pos">{{ horse.POSITION }}</td>
+            <td>{{ horse.NAME }} (#{{ horse.SNO }})</td>
+            <td>{{ horse.TRAINER }}</td>
+            <td>{{ horse.JOCKEY }}<span ng-if="horse.ALLOWANCE"> ({{horse.ALLOWANCE}})</span></td>
+            <td class="hide-for-mobile bold">{{ horse.WEIGHT }}</td>
+            <td ng-if="race.RUNNERS.0.POSITION" class="hide-for-mobile">{{ horse.SP }}</td>
+            <td ng-if="race.RUNNERS.0.POSITION" class="hide-for-mobile">{{ horse.TOTEWIN }}</td>
+            <td ng-if="race.RUNNERS.0.POSITION" class="hide-for-mobile">{{ horse.TOTEPLACE }}</td>
+        </tr>
+    </table>
+</div>

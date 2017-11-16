@@ -1,0 +1,398 @@
+//Racing Results App SCSS file
+
+$primaryColor: #4ebff1;
+
+//Overall racing app
+.racing-results{
+  font-family: "PT Sans", sans-serif;
+  //angular generated part
+ .app {
+    position: relative;
+    &.loading-true * {
+      display: none;
+    }
+  }
+  //Main page heading which includes the calendar
+  .index-heading{
+    position: relative;
+    margin-bottom: 0;
+    padding-bottom: 0!important;
+    .calendar{
+      bottom: 1rem;
+      padding-right: 2.5rem;
+      right: 0;
+      .main-date{
+        display: none;
+        font-size: 1rem;
+        line-height: 1.5rem;
+        margin-right: 1.5rem;
+        float: left;
+        padding-top: 8px;
+      }
+      a{
+        color: $primaryColor;
+        position: absolute;
+        right: 0;
+        top:1.2rem;
+        float: right;
+        line-height: 0;
+        margin-right: 1rem;
+        i{
+          color: $primaryColor!important;
+          font-size: 2.5rem;
+        }
+      }
+    }
+  }//end app heading
+
+  //!todo Update in main CSS, this is overiding live styles
+  nav.results-sub-nav{
+    margin: 1.5rem 0 2rem 0;
+  }
+
+  //List of meetings (list.html)
+  .meeting-list ul{
+    padding: 0;
+    list-style: none;
+    margin: 0;
+    margin-top:1rem;
+
+    li{
+      background: #F4F6F8;
+      border-bottom: 1px solid #bbc2d4;
+      padding: 1rem;
+      &:hover{
+        background: #e3e4e8;
+      }
+      a{
+        color: #000000!important;
+        font-size: 1rem;
+        display: block;
+        line-height: 1.9rem;
+        i{
+          color: #ffffff!important;
+          background: $primaryColor;
+          border-radius: 30px;
+          margin-top: 6px;
+          float: right;
+          padding: 3px;
+        }//end i
+      }//and a
+    }//end li
+  }//end meeting list
+
+  //Meeting pages (meeting.html)
+  .meeting-heading{
+    font-family: "Montserrat", sans-serif;
+    display: table;
+    width: 100%;
+    text-transform: uppercase;
+    border-bottom: 3px solid $primaryColor;
+    padding: 0 0 1rem;
+    margin: 0;
+    span.course{
+      font-size: 1.7rem;
+      text-transform: uppercase;
+    }
+    span.going{
+
+      display: block;
+      width: 100%;
+    }
+  }
+
+  .race-heading{
+    font-family: "Montserrat",sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 1rem 0 0.5rem;
+  }
+
+  .detail{
+      font-family: "Montserrat",sans-serif;
+      font-weight: bold;
+      margin: 0 3px;
+  }
+
+
+  //Meeting Tables
+  table.meeting-table{
+    //general table
+    width: 100%;
+    margin-bottom: 1.3rem;
+    border-collapse: collapse;
+    //table caption
+    caption{
+      text-align: left;
+    }
+    //Tables header
+    thead{
+      tr{
+        background: #e9ecf1;
+        border-bottom: 2px solid #d2d9e3!important;
+        th{
+          font-weight: bold;
+          padding: 1rem 0.5rem;
+          text-align: left;
+        }
+      }
+    }//end thead
+    //General rows
+    tr{
+      border-bottom: 2px solid #d2d9e3;
+      &:last-child{
+        border-bottom: none;
+      }
+      td{
+        padding: 0.5rem;
+        &.hide-for-mobile{
+
+        }
+        &.pos{
+          font-weight: bold;
+        }
+      }//end td / th
+    }//end tr
+  }//edn table
+
+
+  //General UI
+  .back-link{
+    display: block;
+    width: 100%;
+    margin:1rem 0;
+    color:#000000;
+    font-weight: bold;
+    font-size: 1.3rem;
+    i{
+      font-size: 2rem;
+      font-weight: bold;
+      margin-right: 0.3rem;
+      margin-left: -11px;
+      color: $primaryColor;
+    }
+    span{
+      position: absolute;
+    }
+  }
+  .status{
+    color: $primaryColor;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    display: block;
+  }
+  .error{
+    display: block;
+    margin: 1rem 0;
+    color:#ff0000;
+  }
+
+
+}//end racing results
+
+//Calendar styles here, perhaps to
+
+$calendarWidth:395px;
+$calendarHeight:350px;
+
+.osom-wrapper{
+  width: $calendarWidth;
+  height: $calendarHeight;
+  opacity: 0;//Update to 0 when going live
+  display: none;
+  right: 0;
+  padding: 1rem;
+  border: 1px solid #bbc4d3;
+  position: absolute;
+  z-index: 5;
+  background: #ffffff;
+  -webkit-transition: 1s;
+}
+
+#osom-datepicker{
+  width: 100%;
+  overflow: hidden;
+  height: $calendarHeight;
+  position: relative;
+  .osom-datepicker-buttonscontainer{
+    position: absolute;
+    z-index: 12;
+    width: 100%;
+    button{
+      background: $primaryColor;
+      border-radius: 30px;
+      padding: 0.6rem 0.8rem;
+      font-size: 1rem;
+      &:disabled{
+        opacity: 0.5;
+      }
+      &.osom-datepicker-upbutton{
+        float: left;
+      }
+      &.osom-datepicker-downbutton{
+        float: right;
+      }
+    }//end buttons
+  }//en btn container
+  .osom-datepicker-animated{
+    -webkit-transition: top 0.8s, left 0.8s;
+    transition: top 0.8s, left 0.8s;
+  }
+  .osom-datepicker-upbutton{
+    margin-left: 10px;
+  }
+  .osom-datepicker-container{
+    position: absolute;
+    z-index: 10;
+    top:10px;
+    height: $calendarHeight;
+    .osom-datepicker-slider{
+      left:-360px;
+      height: $calendarHeight;
+      position: absolute;
+      top: -8px;
+      white-space: nowrap;
+    }
+    .osom-datepicker-month{
+      display: inline-block;
+      width: 360px;
+      height: $calendarHeight;
+      .osom-datepicker-day{
+        width: 100%;
+        height: 100%;
+      }
+      span{
+        font-family: "Montserrat", sans-serif;
+        font-size: 1.5rem;
+        width: $calendarWidth;
+        display: block;
+        text-align: center;
+      }
+      table{
+        width: 100%;
+        margin-top:1rem;
+        tr{
+          td{
+            font-family: "PT Sans", sans-serif;
+            button{
+              cursor: pointer;
+              font-family: "PT Sans", sans-serif!important;
+              font-weight: normal;
+              background: none;
+              border-radius: 0;
+              color:black;
+              border: 1px solid #f5f6f8;
+              margin-bottom: 0;
+              padding: 10px;
+              &.osom-datepicker-daydisabled{
+                color: #bec3e0;
+              }
+              &.osom-datepicker-selectedday{
+                color:$primaryColor;
+                border:1px solid $primaryColor;
+              }
+            }
+          }
+        }
+      }
+
+    }
+  }//end osom container
+}
+
+.visible{
+  display: block!important;
+  opacity: 1!important;
+}
+//App Animation here
+.animation {
+  width: 100%;
+  position: absolute;
+  -webkit-transition: 1s;
+  &.ng-enter {
+    opacity: 0;
+    z-index: 2;
+  }
+  &.ng-leave {
+    opacity: 1;
+    z-index: 3;
+  }
+}
+.animation.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+
+.animation.ng-leave.ng-leave-active {
+  opacity: 0;
+}
+
+#horsey{
+  position: fixed;
+  bottom:0;
+  left: 10000px;
+  width: 80px;
+  -webkit-transition-property: left; /* Safari */
+  -webkit-transition-duration: 10s; /* Safari */
+  transition-property: left;
+  transition-duration: 10s;
+}
+
+
+
+//*********** MEDIA QUERIES *************//
+
+
+//Mobile only
+@media only screen and (max-width: 40.063em) {
+  table tr td, table tr th {
+    &.hide-for-mobile {
+      display: none !important;
+    }
+  }
+}
+
+//tablet up
+@media only screen and (min-width: 40.063em) {
+  table tr td, table tr th {
+    &.hide-for-mobile {
+      display: table-cell !important;
+    }
+  }
+
+  .index-heading{
+    .calendar{
+      position: absolute;
+      .main-date{
+        display: block!important;
+      }
+      a{
+        top:inherit!important;
+      }
+    }
+  }
+
+  .meeting-heading{
+      span.course, span.going{
+        float: left;
+        width: 50%!important;
+      }
+    span.going{
+      text-align: right;
+
+    }
+  }
+
+  .osom-wrapper{
+    margin-right: .5rem;
+  }
+
+}//end tablet up
+
+//Desktop
+@media only screen and (min-width: 64.063em) {
+
+  .racing-results .index-heading .calendar .main-date{
+    font-size: 1.5rem;
+  }
+
+}

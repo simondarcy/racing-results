@@ -1,0 +1,25 @@
+{
+  "UK": [{
+    "NAME": "Haydock",
+    "LINK": "20160609-haydock"
+  }, {
+    "NAME": "Newbury",
+    "LINK": "20160609-newbury"
+  }, {
+    "NAME": "Nottingham",
+    "LINK": "20160609-nottingham"
+  }, {
+    "NAME": "Kempton",
+    "LINK": "20160609-kempton"
+  }, {
+    "NAME": "Yarmouth",
+    "LINK": "20160619-yarmouth"
+  },{
+    "NAME": "Uttoxeter",
+    "LINK": "20160619-uttoxeter"
+  }],
+  "Ireland": [{
+    "NAME": "Leopardstown",
+    "LINK": "20160609-leopardstown"
+  }]
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RTÉ.ie Horse Racing Results</title>
+    <meta name="viewport" content="minimal-ui width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <!-- Stuff from dotie -->
+    <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic|Montserrat:400,700|Lora:400,400italic,700italic,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//dj.rasset.ie/dotie/css/foundation.min.css"/>
+    <link rel="stylesheet" href="//dj.rasset.ie/dotie/css/style.css?v=10072016"/>
+    <link rel="stylesheet" href="//dj.rasset.ie/dotie/css/sites/sport.css?v=10072016"/>
+
+    <!-- Racing results specific stuff -->
+    <link rel="stylesheet" href="css/racing-results.css?v=10072016"/>
+    <link rel="stylesheet" href="css/icons.css"/>
+
+</head>
+<body class="sport racing-results">
+    <!-- Main Angular App Markup-->
+    <div class="container" ng-app="myApp">
+
+        <h1 class="index-heading">Racing Results<span class="dot sport">.</span>
+            <div class="calendar">
+                <span class="main-date">{{date}}</span>
+                <a class="datepicker-btn" href="javascript:void(0);"><i class="icon icon-icon_calendar secondary-color"></i></a>
+            </div>
+        </h1>
+
+        <div class="osom-wrapper" id="osom-wrapper"><div id="osom-datepicker"></div></div>
+
+        <!--Main app markup-->
+        <div class="small-12 columns">
+            <div class="app">
+                <div ng-view class="animation"><!-- Templates will load in here --></div>
+            </div>
+        </div>
+
+    </div><!-- End Container/Angular markup -->
+    <img id="horsey" src="img/horsey.gif"/>
+
+    <!-- Required Angular Scripts-->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular-route.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular-animate.min.js"></script>
+    <!-- Racing results scripts -->
+    <script src="js/racing-results.js?v=10072016"></script>
+    <script type="text/javascript" src="js/osom-datepicker.js?v=10072016"></script>
+</body>
+</html>

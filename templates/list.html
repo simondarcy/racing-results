@@ -1,0 +1,10 @@
+<span ng-if="error" class="error">{{ error }}</span>
+
+<div ng-if="meetings" class="meeting-list">
+    <ul class="links">
+        <li ng-repeat="meeting in meetings"><a href="{{ meeting.url }}">{{ meeting.name }}<i class="icon-icon_arrow_right" aria-hidden="true"></i></a></li>
+    </ul>
+</div>
+
+
+

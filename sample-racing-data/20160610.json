@@ -1,0 +1,31 @@
+{
+  "UK": [
+    {
+      "NAME": "Chepstow",
+      "LINK": "20160610-chepstow"
+    },{
+    "NAME": "Aintree",
+    "LINK": "20160610-aintree"
+  }, {
+    "NAME": "Chepstow",
+    "LINK": "20160610-chepstow"
+  }, {
+    "NAME": "Goodwood",
+    "LINK": "20160610-goodwood"
+  }, {
+    "NAME": "York",
+    "LINK": "20160610-york"
+  }, {
+    "NAME": "Newton Abbot",
+    "LINK": "20160610-newtonabbot"
+  },{
+    "NAME": "Sandown",
+    "LINK": "20160610-sandown"
+  }],
+  "Ireland": [
+    {
+      "NAME": "Clonmel",
+      "LINK": "20160610-clonmel"
+    }
+  ]
+}

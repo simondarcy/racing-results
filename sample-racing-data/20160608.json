@@ -1,0 +1,22 @@
+{
+  "UK": [{
+    "NAME": "Beverley",
+    "LINK": "20160608-beverley"
+  }, {
+    "NAME": "Hamilton",
+    "LINK": "20160608-hamilton"
+  }, {
+    "NAME": "Haydock",
+    "LINK": "20160608-haydock"
+  }, {
+    "NAME": "Kempton",
+    "LINK": "20160608-kempton"
+  }, {
+    "NAME": "Yarmouth",
+    "LINK": "20160608-yarmouth"
+  }],
+  "Ireland": [{
+    "NAME": "Fairyhouse",
+    "LINK": "20160608-fairyhouse"
+  }]
+}
